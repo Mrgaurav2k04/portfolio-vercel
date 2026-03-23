@@ -10,11 +10,15 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
 </head>
 
 <body>
+  <div class="scroll-progress"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
   <canvas id="particles-canvas"></canvas>
 
   <header class="site-header">
@@ -45,7 +49,8 @@
           <p class="eyebrow">Data Scientist</p>
           <h1>Hi, I'm <span>Gaurav Khandelwal</span></h1>
           <p class="hero-subtitle">
-            <strong>Data Scientist</strong> · B.Tech CSE at Lovely Professional University.
+            <strong><span class="typing-text">Data Scientist</span><span class="typing-cursor"></span></strong> · B.Tech
+            CSE at Lovely Professional University.
           </p>
           <p class="hero-body">
             I transform raw data into actionable insights and predictive models.
@@ -85,29 +90,7 @@
       </div>
     </section>
 
-    <!-- Stats -->
-    <section class="section">
-      <div class="container">
-        <div class="stats-row reveal">
-          <div class="stat-item">
-            <span class="stat-number" data-count="3" data-suffix="+">0</span>
-            <span class="stat-label">Projects</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="5">0</span>
-            <span class="stat-label">Languages & Tools</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="3">0</span>
-            <span class="stat-label">Certificates</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="8" data-suffix=".55">0</span>
-            <span class="stat-label">CGPA</span>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
     <!-- Resume -->
     <section id="resume" class="section">
@@ -177,20 +160,38 @@
           <div class="card">
             <h3>Programming Languages</h3>
             <ul class="tag-list">
-              <li><span class="skill-icon">🐍</span> Python</li>
-              <li><span class="skill-icon">🗃️</span> SQL</li>
-              <li><span class="skill-icon">⚡</span> C++</li>
-              <li><span class="skill-icon">📜</span> JavaScript</li>
+              <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="skill-icon-img" /> Python</li>
+              <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="SQL" class="skill-icon-img" /> SQL</li>
+              <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" class="skill-icon-img" /> C++</li>
+              <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon-img" /> JavaScript</li>
             </ul>
           </div>
           <div class="card">
             <h3>Tools & Frameworks</h3>
             <ul class="tag-list">
-              <li><span class="skill-icon">📊</span> Pandas / NumPy</li>
-              <li><span class="skill-icon">🧠</span> Scikit-learn / XGBoost</li>
-              <li><span class="skill-icon">📈</span> Matplotlib / Seaborn</li>
-              <li><span class="skill-icon">🚀</span> Streamlit</li>
-              <li><span class="skill-icon">📉</span> Power BI / Excel</li>
+              <li>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas" class="skill-icon-img" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="NumPy" class="skill-icon-img" />
+                Pandas / NumPy
+              </li>
+              <li>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn" class="skill-icon-img" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/XGBoost_logo.png" alt="XGBoost" class="skill-icon-img" />
+                Scikit-learn / XGBoost
+              </li>
+              <li>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" class="skill-icon-img" />
+                Matplotlib / Seaborn
+              </li>
+              <li>
+                <img src="https://cdn.simpleicons.org/streamlit/FF4B4B" alt="Streamlit" class="skill-icon-img" />
+                Streamlit
+              </li>
+              <li>
+                <img src="https://img.icons8.com/color/48/000000/power-bi.png" alt="Power BI" class="skill-icon-img" />
+                <img src="https://img.icons8.com/color/48/000000/ms-excel.png" alt="Excel" class="skill-icon-img" />
+                Power BI / Excel
+              </li>
             </ul>
           </div>
           <div class="card">
@@ -217,52 +218,56 @@
             and links.
           </p>
         </div>
-        <div class="grid three-cols reveal-stagger">
-          <article class="card project-card">
-            <h3>Poverty Rate Imputation & Consumption Prediction</h3>
-            <p class="meta">Tech: Python, Pandas, NumPy, Scikit-learn, XGBoost, Streamlit</p>
-            <p>
-              XGBoost pipeline using GroupKFold cross-validation and sample weights
-              to impute household daily consumption across 3 unseen survey populations.
-            </p>
-            <ul class="bullet-list">
-              <li>Extrapolated poverty rates across 19 thresholds using weighted aggregation (World Bank WMAPE/MAPE)
-              </li>
-              <li>Built interactive Streamlit dashboard with poverty curves, reducing analysis time by 30%</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/Mrgaurav2k04/imputing-consumption-and-predict-poverty-rates" target="_blank"
-                rel="noreferrer">GitHub</a>
+        <div class="project-stack reveal-stagger">
+          <article class="card project-card project-card-horizontal">
+            <div class="project-infographic">
+              <img src="Project 1.png" alt="Poverty Rate Imputation Infographic" />
+            </div>
+            <div class="project-content">
+              <h3>Poverty Rate Imputation & Consumption Prediction</h3>
+              <p class="meta">Tech: Python, Pandas, NumPy, Scikit-learn, XGBoost, Streamlit</p>
+              <ul class="bullet-list">
+                <li><strong>Problem:</strong> Need to impute household daily consumption across 3 unseen survey populations to extrapolate poverty rates.</li>
+                <li><strong>Solution:</strong> Developed an XGBoost pipeline using GroupKFold cross-validation and sample weights, and designed an interactive Streamlit dashboard.</li>
+                <li><strong>Analysis:</strong> Extrapolated poverty rates across 19 thresholds (World Bank WMAPE/MAPE), reducing data analysis time by 30%.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/Mrgaurav2k04/imputing-consumption-and-predict-poverty-rates" target="_blank" rel="noreferrer"><img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="skill-icon-img theme-invert" /> GitHub</a>
+              </div>
             </div>
           </article>
-          <article class="card project-card">
-            <h3>Car Market Analysis & Performance Correlation</h3>
-            <p class="meta">Tech: Python, Pandas, Matplotlib, Seaborn, MySQL, Excel</p>
-            <p>
-              Cleaned and standardized 10,000+ car records, handling inconsistent
-              pricing and performance formats for deep exploratory analysis.
-            </p>
-            <ul class="bullet-list">
-              <li>Validated strong correlations (R > 0.8) between horsepower, speed, and torque via EDA</li>
-              <li>Optimized SQL queries for aggregated insights across 50+ fuel types and brands</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/Mrgaurav2k04" target="_blank" rel="noreferrer">GitHub</a>
+          <article class="card project-card project-card-horizontal">
+            <div class="project-infographic">
+              <img src="project2.png" alt="Car Market Analysis Infographic" />
+            </div>
+            <div class="project-content">
+              <h3>Car Market Analysis & Performance Correlation</h3>
+              <p class="meta">Tech: Python, Pandas, Matplotlib, Seaborn, MySQL, Excel</p>
+              <ul class="bullet-list">
+                <li><strong>Problem:</strong> Inconsistent pricing and performance formats across 10,000+ car records hindered deep exploratory analysis.</li>
+                <li><strong>Solution:</strong> Cleaned and standardized the dataset, and optimized SQL queries to extract insights across 50+ unique fuel types and brands.</li>
+                <li><strong>Analysis:</strong> Validated strong correlations (R > 0.8) between horsepower, speed, and torque through extensive EDA.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/Mrgaurav2k04" target="_blank" rel="noreferrer"><img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="skill-icon-img theme-invert" /> GitHub</a>
+              </div>
             </div>
           </article>
-          <article class="card project-card">
-            <h3>Fertilizer Consumption Analysis in India</h3>
-            <p class="meta">Tech: Python, Pandas, Matplotlib, Seaborn, Power BI, Excel</p>
-            <p>
-              Time-series analysis on 10+ years of district-level data spanning
-              700+ districts to identify NPK usage trends across India.
-            </p>
-            <ul class="bullet-list">
-              <li>Built Power BI dashboard comparing consumption per hectare (NCA vs. GCA)</li>
-              <li>Modeled usage correlations across state lines to visualize NPK distribution shares</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/Mrgaurav2k04" target="_blank" rel="noreferrer">GitHub</a>
+          <article class="card project-card project-card-horizontal">
+            <div class="project-infographic">
+              <img src="fertilizer.png" alt="Fertilizer Consumption Analysis Infographic" />
+            </div>
+            <div class="project-content">
+              <h3>Fertilizer Consumption Analysis in India</h3>
+              <p class="meta">Tech: Python, Pandas, Matplotlib, Seaborn, Power BI, Excel</p>
+              <ul class="bullet-list">
+                <li><strong>Problem:</strong> Need to identify NPK usage trends and regional disparities using 10+ years of crop data across 700+ Indian districts.</li>
+                <li><strong>Solution:</strong> Modeled usage correlations across state lines and built a Power BI dashboard comparing consumption per hectare.</li>
+                <li><strong>Analysis:</strong> Visualized NPK distribution shares and identified usage trends, highlighting regional disparities.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/Mrgaurav2k04" target="_blank" rel="noreferrer"><img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="skill-icon-img theme-invert" /> GitHub</a>
+              </div>
             </div>
           </article>
         </div>
@@ -281,16 +286,20 @@
         </div>
         <div class="timeline reveal">
           <div class="timeline-item">
-            <h3>HackerRank – Python Skill Certification</h3>
-            <p class="meta">Programming • Completed: Nov 2025</p>
+            <h3>Python Skill Certification</h3>
+            <p class="meta">HackerRank • Programming • Completed: November 2025</p>
           </div>
           <div class="timeline-item">
-            <h3>Data Analytics and Industry Tools – W3grads</h3>
-            <p class="meta">Data Analytics • Completed: Jul 2025</p>
+            <h3>Data Analytics and Industry Tools</h3>
+            <p class="meta">W3grads • Data Analytics • Completed: July 2025</p>
           </div>
           <div class="timeline-item">
-            <h3>Unrevealing Basic Python towards ML/AI – CSE Pathshala</h3>
-            <p class="meta">Machine Learning / AI • Completed</p>
+            <h3>The Bits and Bytes of Computer Networking</h3>
+            <p class="meta">Computer Networking • Completed: September 2024</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Unrevealing Basic Python towards ML/AI</h3>
+            <p class="meta">CSE Pathshala • Machine Learning / AI • Completed: March 2024</p>
           </div>
         </div>
       </div>
@@ -341,11 +350,11 @@
       <div class="footer-brand">Gaurav<span>Khandelwal</span></div>
       <p class="footer-note">© <span id="year">2026</span> · Built with passion & clean code</p>
       <div class="footer-socials">
-        <a href="mailto:mrgaurav2k04@gmail.com" aria-label="Email" title="Email">✉️</a>
+        <a href="mailto:mrgaurav2k04@gmail.com" aria-label="Email" title="Email"><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Email" class="footer-icon" /></a>
         <a href="https://www.linkedin.com/in/mrgaurav2k04/" target="_blank" rel="noreferrer" aria-label="LinkedIn"
-          title="LinkedIn">💼</a>
+          title="LinkedIn"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="footer-icon" /></a>
         <a href="https://github.com/Mrgaurav2k04" target="_blank" rel="noreferrer" aria-label="GitHub"
-          title="GitHub">💻</a>
+          title="GitHub"><img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="footer-icon theme-invert" /></a>
       </div>
     </div>
   </footer>

@@ -10,11 +10,14 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
     rel="stylesheet" />
 </head>
 
 <body>
+  <div class="scroll-progress"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
   <canvas id="particles-canvas"></canvas>
 
   <header class="site-header">
@@ -44,74 +47,65 @@
           <h2>Projects</h2>
           <p>Data science, analytics, and machine learning projects with real-world impact.</p>
         </div>
-        <div class="grid three-cols reveal-stagger">
-          <article class="card project-card">
-            <h3>Poverty Rate Imputation & Consumption Prediction</h3>
-            <p class="meta">Tech: Python, Pandas, NumPy, Scikit-learn, XGBoost, Streamlit &bull; Jan 2026 – Present</p>
-            <p>
-              Developed an XGBoost pipeline using GroupKFold cross-validation and
-              sample weights to impute household daily consumption across 3 unseen
-              survey populations.
-            </p>
-            <ul class="bullet-list">
-              <li>Extrapolated poverty rates across 19 thresholds using weighted aggregation (World Bank 90/10
-                WMAPE/MAPE)</li>
-              <li>Designed an interactive Streamlit dashboard with poverty curves and real-time filtering</li>
-              <li>Reduced data analysis time by 30% with the interactive dashboard</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/Mrgaurav2k04/imputing-consumption-and-predict-poverty-rates" target="_blank"
-                rel="noreferrer">⭐ GitHub</a>
+        <div class="project-stack reveal-stagger">
+          <article class="card project-card project-card-horizontal">
+            <div class="project-infographic">
+              <img src="Project 1.png" alt="Poverty Rate Imputation Infographic" />
+            </div>
+            <div class="project-content">
+              <h3>Poverty Rate Imputation & Consumption Prediction</h3>
+              <p class="meta">Tech: Python, Pandas, NumPy, Scikit-learn, XGBoost, Streamlit &bull; Jan 2026 - Present</p>
+              <ul class="bullet-list">
+                <li><strong>Problem:</strong> Need to impute household daily consumption across 3 unseen survey populations to extrapolate poverty rates.</li>
+                <li><strong>Solution:</strong> Developed an XGBoost pipeline using GroupKFold cross-validation and sample weights, and designed an interactive Streamlit dashboard.</li>
+                <li><strong>Analysis:</strong> Extrapolated poverty rates across 19 thresholds (World Bank 90/10 WMAPE/MAPE), reducing data analysis time by 30%.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/Mrgaurav2k04/imputing-consumption-and-predict-poverty-rates" target="_blank"
+                  rel="noreferrer"><img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="skill-icon-img theme-invert" /> GitHub</a>
+              </div>
             </div>
           </article>
-          <article class="card project-card">
-            <h3>Car Market Analysis & Performance Correlation</h3>
-            <p class="meta">Tech: Python, Pandas, Matplotlib, Seaborn, MySQL, Excel &bull; Jun 2025 – Jul 2025</p>
-            <p>
-              Cleaned and standardized a dataset of 10,000+ car records, handling
-              inconsistent pricing and performance formats (e.g., '$', 'hp') for
-              deep exploratory analysis.
-            </p>
-            <ul class="bullet-list">
-              <li>Validated strong correlations (R &gt; 0.8) between horsepower, speed, and torque through extensive EDA
-              </li>
-              <li>Optimized SQL queries to extract aggregated insights across 50+ unique fuel types and brands</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/Mrgaurav2k04/Car-Market-Analysis-and-Performance-Correlation" target="_blank"
-                rel="noreferrer">⭐ GitHub</a>
+          <article class="card project-card project-card-horizontal">
+            <div class="project-infographic">
+              <img src="project2.png" alt="Car Market Analysis Infographic" />
+            </div>
+            <div class="project-content">
+              <h3>Car Market Analysis & Performance Correlation</h3>
+              <p class="meta">Tech: Python, Pandas, Matplotlib, Seaborn, MySQL, Excel &bull; Jun 2025 - Jul 2025</p>
+              <ul class="bullet-list">
+                <li><strong>Problem:</strong> Inconsistent pricing and performance formats across 10,000+ car records hindered deep exploratory analysis.</li>
+                <li><strong>Solution:</strong> Cleaned and standardized the dataset, and optimized SQL queries to extract insights across 50+ unique fuel types and brands.</li>
+                <li><strong>Analysis:</strong> Validated strong correlations (R &gt; 0.8) between horsepower, speed, and torque through extensive EDA.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/Mrgaurav2k04/Car-Market-Analysis-and-Performance-Correlation" target="_blank"
+                  rel="noreferrer"><img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="skill-icon-img theme-invert" /> GitHub</a>
+              </div>
             </div>
           </article>
-          <article class="card project-card">
-            <h3>Fertilizer Consumption Analysis in India</h3>
-            <p class="meta">Tech: Python, Pandas, Matplotlib, Seaborn, Power BI, Excel &bull; Feb 2025 – Apr 2025</p>
-            <p>
-              Performed time-series analysis on 10+ years of district-level data
-              spanning 700+ districts to identify NPK usage trends across India.
-            </p>
-            <ul class="bullet-list">
-              <li>Built a Power BI dashboard comparing consumption per hectare (NCA vs. GCA) for regional analysis</li>
-              <li>Modeled usage correlations across state lines using Matplotlib and Seaborn</li>
-              <li>Visualized NPK distribution shares to highlight regional disparities</li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/Mrgaurav2k04/Fertilizer-Consumption-Analysis-in-India" target="_blank"
-                rel="noreferrer">⭐ GitHub</a>
+          <article class="card project-card project-card-horizontal">
+            <div class="project-infographic">
+              <img src="fertilizer.png" alt="Fertilizer Consumption Analysis Infographic" />
+            </div>
+            <div class="project-content">
+              <h3>Fertilizer Consumption Analysis in India</h3>
+              <p class="meta">Tech: Python, Pandas, Matplotlib, Seaborn, Power BI, Excel &bull; Feb 2025 - Apr 2025</p>
+              <ul class="bullet-list">
+                <li><strong>Problem:</strong> Need to identify NPK usage trends and regional disparities using 10+ years of crop data across 700+ Indian districts.</li>
+                <li><strong>Solution:</strong> Modeled usage correlations across state lines and built a Power BI dashboard comparing consumption per hectare.</li>
+                <li><strong>Analysis:</strong> Visualized NPK distribution shares and identified usage trends, highlighting regional disparities.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/Mrgaurav2k04/Fertilizer-Consumption-Analysis-in-India" target="_blank"
+                  rel="noreferrer"><img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="skill-icon-img theme-invert" /> GitHub</a>
+              </div>
             </div>
           </article>
         </div>
 
         <!-- Stats -->
-        <div class="stats-row reveal" style="margin-top: 3rem;">
-          <div class="stat-item">
-            <span class="stat-number" data-count="3">0</span>
-            <span class="stat-label">Total Projects</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="8" data-suffix="+">0</span>
-            <span class="stat-label">Technologies Used</span>
-          </div>
-        </div>
+
       </div>
     </section>
   </main>
@@ -121,11 +115,11 @@
       <div class="footer-brand">Gaurav<span>Khandelwal</span></div>
       <p class="footer-note">© <span id="year">2026</span> · Built with passion & clean code</p>
       <div class="footer-socials">
-        <a href="mailto:mrgaurav2k04@gmail.com" aria-label="Email" title="Email">✉️</a>
+        <a href="mailto:mrgaurav2k04@gmail.com" aria-label="Email" title="Email"><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Email" class="footer-icon" /></a>
         <a href="https://www.linkedin.com/in/mrgaurav2k04/" target="_blank" rel="noreferrer" aria-label="LinkedIn"
-          title="LinkedIn">💼</a>
+          title="LinkedIn"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="footer-icon" /></a>
         <a href="https://github.com/Mrgaurav2k04" target="_blank" rel="noreferrer" aria-label="GitHub"
-          title="GitHub">💻</a>
+          title="GitHub"><img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" class="footer-icon theme-invert" /></a>
       </div>
     </div>
   </footer>

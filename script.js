@@ -257,3 +257,118 @@
   var yearSpan = document.getElementById("year");
   if (yearSpan) yearSpan.textContent = new Date().getFullYear().toString();
 })();
+
+// ============================================================
+// 9. CUSTOM CURSOR
+// ============================================================
+(function() {
+  if (window.matchMedia("(pointer: coarse)").matches) return; // Skip on touch devices
+
+  var dot = document.querySelector(".cursor-dot");
+  var outline = document.querySelector(".cursor-outline");
+  if (!dot || !outline) return;
+
+  document.body.classList.add("custom-cursor-active");
+
+  window.addEventListener("mousemove", function(e) {
+    dot.style.transform = "translate(" + e.clientX + "px, " + e.clientY + "px)";
+    outline.style.transform = "translate(" + e.clientX + "px, " + e.clientY + "px)";
+  });
+
+  var interactiveElements = document.querySelectorAll("a, button, .btn");
+  interactiveElements.forEach(function(el) {
+    el.addEventListener("mouseenter", function() {
+      outline.classList.add("hover-active");
+    });
+    el.addEventListener("mouseleave", function() {
+      outline.classList.remove("hover-active");
+    });
+  });
+})();
+
+// ============================================================
+// 10. SCROLL PROGRESS BAR
+// ============================================================
+(function() {
+  var progressBar = document.querySelector(".scroll-progress");
+  if (!progressBar) return;
+
+  window.addEventListener("scroll", function() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    progressBar.style.width = scrolled + "%";
+  }, { passive: true });
+})();
+
+// ============================================================
+// 11. 3D TILT EFFECT
+// ============================================================
+(function() {
+  if (window.matchMedia("(pointer: coarse)").matches) return; // Skip on touch
+  var cards = document.querySelectorAll(".card, .hero-card, .timeline-item");
+  
+  cards.forEach(function(card) {
+    card.addEventListener("mousemove", function(e) {
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      
+      var centerX = rect.width / 2;
+      var centerY = rect.height / 2;
+      
+      var rotateX = ((y - centerY) / centerY) * -4; // max rotation degrees
+      var rotateY = ((x - centerX) / centerX) * 4;
+      
+      card.style.transform = "perspective(1000px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) scale3d(1.01, 1.01, 1.01)";
+      card.style.transition = "none";
+    });
+    
+    card.addEventListener("mouseleave", function() {
+      card.style.transform = "";
+      card.style.transition = "transform 0.4s ease";
+    });
+  });
+})();
+
+// ============================================================
+// 12. TYPING EFFECT
+// ============================================================
+(function() {
+  var typeElement = document.querySelector(".typing-text");
+  if (!typeElement) return;
+
+  var roles = ["Data Scientist", "Machine Learning Enthusiast", "Problem Solver"];
+  var roleIndex = 0;
+  var charIndex = 0;
+  var isDeleting = false;
+  var delay = 100; // ms per char
+
+  function type() {
+    var currentRole = roles[roleIndex];
+    
+    if (isDeleting) {
+      typeElement.textContent = currentRole.substring(0, charIndex - 1);
+      charIndex--;
+      delay = 50; // faster deletion
+    } else {
+      typeElement.textContent = currentRole.substring(0, charIndex + 1);
+      charIndex++;
+      delay = 80;
+    }
+
+    if (!isDeleting && charIndex === currentRole.length) {
+      delay = 2000; // pause at end
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      delay = 500; // pause before typing next
+    }
+
+    setTimeout(type, delay);
+  }
+
+  // Initial delay
+  setTimeout(type, 1000);
+})();
